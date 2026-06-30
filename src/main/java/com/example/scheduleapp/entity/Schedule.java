@@ -1,13 +1,9 @@
 package com.example.scheduleapp.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 
 @Getter
 @Entity
@@ -18,10 +14,23 @@ public class Schedule extends TimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(length = 25, nullable = false)
     private String title;
     private String content;
+    @Column(length = 10, nullable = false)
     private String author;
+    @Column(length = 10, nullable = false)
     private String password;
 
+    public Schedule(String title, String content, String author, String password) {
+        this.title = title;
+        this.content = content;
+        this.author = author;
+        this.password = password;
+    }
 
+    public void update(String title, String author) {
+        this.title = title;
+        this.author = author;
+    }
 }

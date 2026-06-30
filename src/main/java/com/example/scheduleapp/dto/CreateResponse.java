@@ -10,16 +10,14 @@ public class CreateResponse {
     private final String title;
     private final String content;
     private final String author;
-    private final String password;
     private final LocalDateTime createdAt;
     private final LocalDateTime modifiedAt;
 
-    public CreateResponse(Long id, String title, String content, String author, String password, LocalDateTime createdAt, LocalDateTime modifiedAt) {
+    public CreateResponse(Long id, String title, String content, String author, LocalDateTime createdAt, LocalDateTime modifiedAt) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.author = author;
-        this.password = password;
         this.createdAt = createdAt;
         this.modifiedAt = modifiedAt;
     }
