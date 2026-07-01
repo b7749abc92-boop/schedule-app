@@ -43,4 +43,5 @@ public class Controller {
         scheduleSvc.delete(scheduleId);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
+
 }

@@ -8,4 +8,5 @@ import java.util.List;
 public interface Repository extends JpaRepository<Schedule, Long> {
 
     List<Schedule> findByAuthorOrderByModifiedAtDesc(String author);
+
 }
