@@ -33,12 +33,12 @@ public class Controller {
         return ResponseEntity.status(HttpStatus.OK).body(scheduleSvc.findAll());
     }
 
-    @PatchMapping("/schedules/{/scheduleId}")
+    @PatchMapping("/schedules/{scheduleId}")
     public ResponseEntity<UpdateResponse> update(@PathVariable Long scheduleId, @RequestBody UpdateResponse request) {
         return ResponseEntity.status(HttpStatus.OK).body(scheduleSvc.update(scheduleId, request));
     }
 
-    @DeleteMapping("/schedules/{/scheduleId}")
+    @DeleteMapping("/schedules/{scheduleId}")
     public ResponseEntity<Void> delete(@PathVariable Long scheduleId) {
         scheduleSvc.delete(scheduleId);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
