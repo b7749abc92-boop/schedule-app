@@ -23,7 +23,7 @@ public class Controller {
         return ResponseEntity.status(HttpStatus.CREATED).body(result);
     }
 
-    @GetMapping("/schedules/{/scheduleId}")
+    @GetMapping("/schedules/{scheduleId}")
     public ResponseEntity<GetResponse> getOne(@PathVariable Long scheduleId) {
         return ResponseEntity.status(HttpStatus.OK).body(scheduleSvc.findOne(scheduleId));
     }
